@@ -21,8 +21,15 @@ pipeline {
 		
 		stage('Execute tests') {
             steps {
-			   // bat 'set DOCKER_BUILDKIT=0'
+			 
                 bat 'docker run -e PORT=3000 -e BASE_URI=172.17.0.2 --network bridge -v test-reports:/usr/src/app --rm  margus/movie-api-tests'
+				bat 'set'
+				
+            }
+        }
+		stage('Reporting') {
+            steps {
+			  
 				bat 'docker container create --name report-container -v test-reports:/root alpine'
 				bat 'docker cp report-container:/root/reports/. ./reports'
             }
