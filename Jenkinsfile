@@ -31,6 +31,7 @@ pipeline {
         always {
             scripts {
 			bat 'docker kill api-container'
-        }
+			}
+		}
 	}
 }
