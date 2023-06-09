@@ -21,6 +21,7 @@ pipeline {
 		
 		stage('Execute tests') {
             steps {
+			    bat 'set DOCKER_BUILDKIT=0'
                 bat 'docker run -e PORT=3000 -e BASE_URI=172.17.0.0 --network bridge --rm  margus/movie-api-tests'
             }
         }
