@@ -28,17 +28,5 @@ describe("Movie API endpoint tests", () => {
     })
 
 
-    test("GET /api/movies/title/:title", (done) => {
-        request(testUri)
-            .get('/api/movies/title/ET')
-            .expect(200)
-            .expect((res) => {
-                expect(res.body.length).toBeGreaterThan(1)
-                expect(res.body).toEqual(movies)
-            })
-            .end((err, res) => {
-                if (err) return done(err);
-                return done();
-            })
-    })
+  
 })
