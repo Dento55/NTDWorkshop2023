@@ -30,7 +30,7 @@ pipeline {
 	post {
         always {
             
-			bat 'docker kill api-container'
+			bat 'docker kill margus/movie-api'
 			
 		}
 	}
