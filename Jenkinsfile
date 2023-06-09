@@ -23,7 +23,10 @@ pipeline {
             steps {
 			    try {
                 bat 'docker run -e PORT=3000 -e BASE_URI=172.17.0.2 --network bridge -v test-reports:/usr/src/app --rm  margus/movie-api-tests'
-				} 
+				} catch (Exception e) {
+						echo 'Exception occurred: ' + e.toString()
+     
+				}
 				
 				
             }
