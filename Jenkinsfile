@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('My First Stage') {
             steps {
-                echo 'My created a pipeline'
+                bat 'docker build . -t margus/movie-api'
             }
         }
     }
