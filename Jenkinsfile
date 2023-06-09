@@ -29,9 +29,9 @@ pipeline {
     }
 	post {
         always {
-            scripts {
+            
 			bat 'docker kill api-container'
-			}
+			
 		}
 	}
 }
