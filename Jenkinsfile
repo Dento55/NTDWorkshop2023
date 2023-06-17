@@ -15,12 +15,13 @@ pipeline {
 		
 		stage('Build Test container') {
             steps {
-                bat 'docker build tests --no-cache -t  margus/movie-api-tests'
+                bat 'docker build tests -t  margus/movie-api-tests'
             }
         }
 		
 		stage('Execute tests') {
             steps {
+			        bat 'docker volume create test-reports'
 					bat 'docker run -e PORT=3000 -e BASE_URI=172.17.0.2 --network bridge -v test-reports:/usr/src/app --rm margus/movie-api-tests'
             }
         }

@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN npx jest --clearCache
+# RUN npx jest --clearCache
 
 
 CMD npm test
