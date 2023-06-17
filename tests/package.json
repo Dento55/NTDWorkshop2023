@@ -2,7 +2,7 @@
   "name": "movie-api-tests",
   "version": "1.0.0",
   "description": "Testing movie api",
-  "main": "movie-tests.js",
+  "main": "movie-tests-changed.js",
   "scripts": {
     "test": "jest"
   },
