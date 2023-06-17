@@ -29,7 +29,7 @@ pipeline {
             steps {
 			  
 				bat 'docker container create --name report-container -v test-reports:/root alpine'
-				bat 'docker cp report-container:/root/reports/. ${WORKSPACE}/reports'
+				bat "docker cp report-container:/root/reports/. ${WORKSPACE}/reports"
             }
         }
 		 stage('Publish Test Results') {
